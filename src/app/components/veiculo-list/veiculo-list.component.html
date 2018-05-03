@@ -1,0 +1,49 @@
+<div [ngClass]="classCss" role="alert" *ngIf="message">
+  <strong>{{ message.text }}</strong>
+</div>
+
+    <div class="box">
+      <div class="box-header">
+        <h3 class="box-title">Listagem de Veículos</h3>
+      </div>
+      
+      <div class="box-body">
+        <table id="example2" class="table table-bordered table-hover">
+          <thead>
+          <tr>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Placa</th>
+            <th>KM</th>
+            <th>Cor</th>
+            <th style="width: 10px;"></th>
+            <th style="width: 10px;"></th>
+          </tr>
+          </thead>
+
+          <tbody>
+              <tr *ngFor="let veiculo of listVeiculos">
+                  <th>{{veiculo.marca}}</th>
+                  <th>{{veiculo.modelo}}</th>
+                  <th>{{veiculo.placa}}</th>
+                  <th>{{veiculo.quilometragem}}</th>
+                  <th>{{veiculo.cor}}</th>
+                  <th><button class="btn btn-primary" (click)="edit(veiculo.id)">Editar</button></th>
+                  <th><button class="btn btn-danger" (click)="delete(veiculo.id)">Remover</button></th>
+                </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box-footer clearfix">
+        <ul class="pagination pagination-sm no-margin pull-right">
+          <li><a href="" (click)="setPreviousPage($event)">&laquo;</a></li>
+          <li *ngFor="let p of pages; let i=index">
+              <a href="" [ngClass]="{'pagination-focus' : i == page}" (click)="setPage(i, $event)">{{i + 1}}</a>
+          </li>
+          <li><a href="" (click)="setNextPage($event)">&raquo;</a></li>
+        </ul>
+      </div>
+      
+    
+</div>

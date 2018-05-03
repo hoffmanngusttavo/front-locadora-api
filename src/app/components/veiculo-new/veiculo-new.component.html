@@ -1,0 +1,104 @@
+<div class="col-md-6" style="margin-left: 0%;">
+
+
+<div class="box box-info">
+    <div class="box-header with-border">
+      <h3 class="box-title">Cadastro de Veículos</h3>
+    </div>
+
+    <form class="form-horizontal" #form="ngForm" (ngSubmit)="salvar()">
+
+      <div [ngClass]="classCss" role="alert" *ngIf="message">
+        <strong>{{ message.text }}</strong>
+      </div>
+
+      <div class="box-body">
+
+        <div [ngClass]="getFromGroupClass(marca.invalid, marca.dirty)">
+          <label for="inputMarca" class="col-sm-2 control-label">Marca</label>
+
+          <div class="col-sm-10">
+            <input 
+              type="text" 
+              [(ngModel)]="veiculo.marca"
+              class="form-control" 
+              name="marca"
+              id="inputMarca" 
+              #marca="ngModel"
+              placeholder="Marca"
+              required>
+          </div>
+        </div>
+
+        <div [ngClass]="getFromGroupClass(modelo.invalid, modelo.dirty)">
+            <label for="inputModelo" class="col-sm-2 control-label">Modelo</label>
+  
+            <div class="col-sm-10">
+              <input 
+                type="text" 
+                [(ngModel)]="veiculo.modelo"
+                class="form-control" 
+                name="modelo"
+                id="inputModelo" 
+                #modelo="ngModel"
+                placeholder="Modelo"
+                required>
+            </div>
+          </div>
+
+          <div [ngClass]="getFromGroupClass(placa.invalid, placa.dirty)">
+              <label for="inputPlaca" class="col-sm-2 control-label">Placa</label>
+    
+              <div class="col-sm-10">
+                <input 
+                  type="text" 
+                  [(ngModel)]="veiculo.placa"
+                  class="form-control" 
+                  name="placa"
+                  id="inputPlaca" 
+                  #placa="ngModel"
+                  placeholder="Placa"
+                  required>
+              </div>
+            </div>
+
+            <div [ngClass]="getFromGroupClass(quilometragem.invalid, quilometragem.dirty)">
+                <label for="inputQuilometragem" class="col-sm-2 control-label">Km</label>
+      
+                <div class="col-sm-10">
+                  <input 
+                    type="text" 
+                    [(ngModel)]="veiculo.quilometragem"
+                    class="form-control" 
+                    name="quilometragem"
+                    id="inputQuilometragem" 
+                    #quilometragem="ngModel"
+                    placeholder="KM"
+                    required>
+                </div>
+              </div>
+
+              <div [ngClass]="getFromGroupClass(cor.invalid, cor.dirty)">
+                  <label for="inputCor" class="col-sm-2 control-label">Cor</label>
+        
+                  <div class="col-sm-10">
+                    <input 
+                      type="text" 
+                      [(ngModel)]="veiculo.cor"
+                      class="form-control" 
+                      name="cor"
+                      id="inputCor" 
+                      #cor="ngModel"
+                      placeholder="Cor">
+                  </div>
+                </div>
+        
+      </div>
+      <!-- /.box-body -->
+      <div class="box-footer">
+        <button type="submit"  class="btn btn-info pull-right">Registrar</button>
+      </div>
+      <!-- /.box-footer -->
+    </form>
+  </div>
+</div>
