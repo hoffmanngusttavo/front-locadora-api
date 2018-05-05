@@ -12,7 +12,7 @@ import { ResponseApi } from '../../model/reponse-api';
 export class VeiculoListComponent implements OnInit {
 
   page:number = 0;
-  count:number = 5;
+  count:number = 3;
   pages:Array<number>;
   message: {}
   classCss: {}

@@ -22,7 +22,7 @@ export class VeiculoService {
 
 
   findAll(page:number, count:number){
-    return this.http.get(`${LOCADORA_VEICULO_API}/api/veiculos?pag=${page}`);
+    return this.http.get(`${LOCADORA_VEICULO_API}/api/veiculos?pag=${page}&size=${count}`);
   }
 
 
